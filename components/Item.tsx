@@ -16,7 +16,7 @@ import PlaylistComponent from "./Footer";
 import Header from "./Header";
 // import { useBottomTabBarHeight } from "@react-navigation/bottom-tabs";
 
-const { height } = Dimensions.get("window");
+const height = Dimensions.get("window").height;
 const statusBarHeight = Platform.OS === "android" ? StatusBar.currentHeight : 0;
 // const bottomTabNavigatorHeight = 60;
 // const itemHeight = height - (statusBarHeight + bottomTabNavigatorHeight + 60);
@@ -85,7 +85,7 @@ const styles = StyleSheet.create({
     color: "white",
   },
   item: {
-    height: height,
+    height: height - 112,
     borderColor: "green",
     borderWidth: 2,
     justifyContent: "space-between",

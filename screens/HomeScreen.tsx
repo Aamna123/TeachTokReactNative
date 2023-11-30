@@ -18,7 +18,7 @@ let endReached = false;
 const windowHeight = Dimensions.get("window").height;
 const statusBarHeight = Platform.OS === "android" ? StatusBar.currentHeight : 0;
 const bottomTabNavigatorHeight = 50; // Define the height of your bottom tab navigator
-const flatListHeight = windowHeight - bottomTabNavigatorHeight;
+const flatListHeight = windowHeight - 112;
 
 const HomeScreen = () => {
   const context = useContext(DataContext);
@@ -58,13 +58,11 @@ const HomeScreen = () => {
         <Header />
         <FlatList
           contentContainerStyle={{
-            minHeight: "100%",
-            justifyContent: "space-between",
+            // justifyContent: "space-between",
+            paddingBottom: 50,
           }}
           data={data}
-          style={{
-            height: windowHeight,
-          }}
+          style={{}}
           renderItem={({ item }) => <Item mcqResponse={item} />}
           keyExtractor={(item, index) => item.id + index}
           onEndReached={() => handleLoadMore()}
@@ -83,7 +81,7 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: windowHeight,
+    // height: windowHeight,
     paddingTop: statusBarHeight,
   },
   backgroundImage: {
